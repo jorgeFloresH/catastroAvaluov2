@@ -1,0 +1,37 @@
+
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews
+    </IfModule>
+    
+
+    RewriteEngine On
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+    # Handle Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+    
+    
+</IfModule>
+
+# File modified on Thu Aug 18 19:38:35 2016 by server
+# For security reasons, mod_php is not used on this server. Use a php.ini file for php directives
+# php_flag display_startup_errors off
+# For security reasons, mod_php is not used on this server. Use a php.ini file for php directives
+# php_flag display_errors off
+# For security reasons, mod_php is not used on this server. Use a php.ini file for php directives
+# php_flag html_errors on
+# For security reasons, mod_php is not used on this server. Use a php.ini file for php directives
+# php_flag log_errors on
+# File modified on Thu Aug 18 19:38:36 2016 by server
+# For security reasons, mod_php is not used on this server. Use a php.ini file for php directives
+# php_value error_log  e:/proyectos/php/catastrocbba/catastroBackend/logs/PHP_errors.log
